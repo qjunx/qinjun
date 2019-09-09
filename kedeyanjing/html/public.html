@@ -1,0 +1,144 @@
+<div id="public">
+    <div id="User_toolbar"></div>
+    <div class="page_top">
+        <div class="content top">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="http://localhost/qinjun/kedeyanjing/img/kekde_logo.gif" alt="可得眼镜">
+                </a>
+            </div>
+            <div class="top_bz">
+                <div class="top_baozhan">
+                    <a href="javascript:void(0)"></a>
+                    <a href="javascript:void(0)"></a>
+                    <a href="javascript:void(0)"></a>
+                    <a href="javascript:void(0)"></a>
+                    <a href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <div class="top_search">
+                <input id="txt-search" type="text" placeholder="库博硅水凝胶日抛">
+                <i class="txt_search_i"></i>
+                <input id="btn_top_search" type="button" value="搜索">
+                <div class="search_bottom">
+                    <span>热门搜索：</span>
+                    <a href="javascript:void(0)">实瞳</a>
+                    <a href="javascript:void(0)">茵洛</a>
+                    <a href="javascript:void(0)">卫康</a>
+                    <a href="javascript:void(0)">海昌</a>
+                    <a href="javascript:void(0)">绮芙莉</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="appbar">
+        <div class="appbar_top content">
+            <div id="wide_channel_category"> 全部商品分类
+                <i class="all_class"></i>
+                <ul id="category_info">
+                    <li class="list_item">
+                        <i style="background-position: 0px -414px;
+                    " class="item_left"></i>
+                        <h3><a href="javascript:void(0)">透明隐形眼镜</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <li class="list_item">
+                        <i style="background-position: 0px -453px;" class="item_left"></i>
+                        <h3><a href="javascript:void(0)">彩色隐形眼镜</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <li class="list_item">
+                        <i style="background-position: 0px -494px;" class="item_left"></i>
+                        <h3><a href="javascript:void(0)">护理用品</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <li class="list_item">
+                        <i style="    background-position: 0px -531px;" class="item_left"></i>
+                        <h3><a href="javascript:void(0)">近视眼镜</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <li class="list_item">
+                        <i style="background-position: 0px -570px;" class="item_left"></i>
+                        <h3><a href="javascript:void(0)">太阳眼镜</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <li class="list_item">
+                        <i style="background-position: 0px -607px;" class="item_left"></i>
+                        <h3><a href="javascript:void(0)">功能眼镜</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <li class="list_item">
+                        <i style="background-position: 0px -644px;" class="item_left"></i>
+                        <h3><a href="javascript:void(0)">美妆个护</a></h3>
+                        <i class="item_blank"></i>
+                        <div class="list_item_line"></div>
+                    </li>
+                    <div class="child_list">
+                        <div class="child_list_left">
+                        </div>
+                        <div class="child_list_right">
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <ul id="ulNavigatorHeader">
+                <a href="javascript:void(0)">
+                    <li class="item">首页</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">海淘隐形</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">彩瞳</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">隐形眼镜</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">护理用品</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">框架眼镜</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">美妆个护</li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li class="item">积分商城</li>
+                </a>
+            </ul>
+        </div>
+        <div class="pf_right">
+            <a href="javascript:void(0)" style="background-position: -309px -597px;
+            border-top: 1px solid #e8e8e8;">
+                <div class="pf_weixin"></div>
+            </a>
+            <a href="javascript:void(0)" style="background-position: -309px -475px;" id="kf">
+            </a>
+            <a href="javascript:void(0)" style="background-position: -309px -536px;">
+                <div class="pf_ygs"></div>
+            </a>
+            <a href="javascript:void(0)" style="background-position: -309px -658px;" id="gwc">
+                <i id="quantity">0</i>
+            </a>
+            <a id="Back_top" href="javascript:void(0)" style="background-position: -309px -719px;display: none;"></a>
+        </div>
+    </div>
+</div>
+<script>
+    let qj = window.location.pathname.split("/").reverse()[0];
+    if (qj == "index.html") {
+        $('#User_toolbar').load('./html/top.html');
+        $('#dizi')[0].src = './js/public.js';
+    } else {
+        $('#User_toolbar').load('top.html');
+        $('#dizi')[0].src = '../js/public.js';
+    }
+</script>
+<script src="" id="dizi"></script>

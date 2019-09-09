@@ -1,0 +1,145 @@
+<div id="User_toolbars">
+    <div class="content roof">
+        <div class="roof_left">
+            <a id="collect" href="javascript:void(0)">收藏可得网</a>
+        </div>
+        <div class="roof_left1">
+            您好，欢迎光临可得眼镜网！
+            <a id="login" href="javascript:void(0)" style="margin-left: 10px">登录</a>
+            <a id="login1" href="javascript:void(0)">[免费注册]</a>
+        </div>
+        <div class="roof_right">
+            <span class="collect">
+                <a href="javascript:void(0)">我的优惠劵</a>
+            </span>
+            <span class="pron">
+                <a href="javascript:void(0)" style="margin-right: 7px;">我的可得</a><i></i>
+                <ul class="item" id="top_item">
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                    <li><a href="javascript:void(0)">我的收藏</a></li>
+                    <li><a href="javascript:void(0)">积分总换</a></li>
+                    <li><a href="javascript:void(0)">我的验光单</a></li>
+                </ul>
+            </span>
+            <span class="help">
+                <a href="javascript:void(0)" style="margin-right: 7px;">帮助中心</a><i></i>
+                <ul class="item1" id="top_item">
+                    <li><a href="javascript:void(0)">常见问题</a></li>
+                    <li><a href="javascript:void(0)">退货换货</a></li>
+                    <li><a href="javascript:void(0)">快递查询</a></li>
+                    <li><a href="javascript:void(0)">眼镜学堂</a></li>
+                    <li><a href="javascript:void(0)">优惠劵使用</a></li>
+                    <li><a href="javascript:void(0)">投诉建议</a></li>
+                    <li><a href="javascript:void(0)">网站地图</a></li>
+                </ul>
+            </span>
+            <span>|</span>
+            <span class="shopping_trolley">
+                <a href="javascript:void(0)">购物车<span style="color: red">0</span>件</a>
+            </span>
+            <span class="app">
+                <a href="javascript:void(0)">手机版</a>
+                <ul class="quick_mark" id="top_item">
+                </ul>
+            </span>
+            <a href="javascript:void(0)" style="color: #fe6809;">客服电话：4006-20-20-20 ( 8:30-23:45 )</a>
+        </div>
+    </div>
+    <script>
+        (function () {
+            //判断页面在后面添加JS文件
+            window.onload = function () {
+                let qj = window.location.pathname.split("/").reverse()[0],
+                    oScript = document.createElement("script"),
+                    dz = '';
+                if (qj == "index.html") {
+                    oScript.src = "./js/index.js";
+                    dz = './api/connector.php';
+                    document.body.parentNode.appendChild(oScript);
+                } else {
+                    oScript.src = "../js/index.js";
+                    dz = '../api/connector.php';
+                    document.body.parentNode.appendChild(oScript);
+                }
+                //验证是否登陆和记住账号密码
+                $.ajax({
+                    type: "get",
+                    data: {
+                        num: 3,
+                    },
+                    url: dz,
+                    success: function (str) {
+                        str = str.split('&');
+                        yz = /\d{11}/;
+                        if (yz.test(str[0])) {
+                            let str1 = str[0].substring(0, 5);
+                            $('.roof_left1').html(
+                                `${str1}...您好，欢迎来到可得！<a id="quit" href="javascript:void(0)">[退出]</a>`
+                            );
+                            //退出
+                            $("#quit").click(function () {
+                                $.ajax({
+                                    type: "get",
+                                    data: {
+                                        num: 4,
+                                    },
+                                    url: dz,
+                                    success: function (str) {
+                                        location.reload();
+                                    }
+                                });
+                            });
+                        }
+                        if ($('#UserName').val() == '') {
+                            if (str[1] != "0") {
+                                $('#UserName').val(str[1]);
+                                $('#Password_dl').val(str[2]);
+                                $('#jz_password').prop("checked", true);
+                                $('#log-btn').css('background', '#f60');
+                                $('#log-btn').attr("name", "dl");
+                            }
+                        } else {
+
+                        }
+                    }
+                });
+            };
+            //顶部滑动显示隐藏
+            //箭头函数指向windows
+            $('.pron, .help,.app').hover(function () {
+                $(this).find('ul').show();
+            }, function () {
+                $(this).find('ul').hide();
+            })
+            //收藏文件夹
+            $('#collect').click(function () {
+                var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' :
+                    'CTRL';
+                if (document.all) {
+                    window.external.addFavorite(window.location.href, '可得网')
+                } else if (window.sidebar) {
+                    window.sidebar.addPanel('可得网', window.location.href, "")
+                } else {
+                    alert('您可以尝试通过快捷键' + ctrl + ' + D 加入到收藏夹~')
+                }
+            });
+            //登陆注册
+            $('#login,#login1').click(function () {
+                let qj = window.location.pathname.split("/").reverse()[0],
+                    Oid = $(this).attr('id');
+                if (Oid == "login") {
+                    if (qj == "index.html") {
+                        window.open(`./html/login.html?id=dl`);
+                    } else {
+                        window.open(`../html/login.html?id=dl`);
+                    }
+                } else if (Oid == "login1") {
+                    if (qj == "index.html") {
+                        window.open(`./html/login.html?id=zc`);
+                    } else {
+                        window.open(`../html/login.html?id=zc`);
+                    }
+                }
+            });
+        })();
+    </script>

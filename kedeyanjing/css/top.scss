@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #666666;
+}
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#User_toolbars {
+    height: 26px;
+    color: #999999;
+    background-color: #f2f2f2;
+    border: 1px solid #e5e5e5;
+
+    .roof {
+        height: 26px;
+        line-height: 26px;
+
+        .roof_left {
+            width: 78px;
+            padding: 0px 0px 0px 22px;
+            background: url(../img/tubiao.png) no-repeat;
+            background-repeat: no-repeat;
+            background-position: 2px 5px;
+            float: left;
+
+            #collect {
+                display: block;
+
+                &#collect:hover {
+                    color: #ff6600;
+                }
+            }
+        }
+
+        .roof_left1 {
+            float: left;
+            font-size: 13px;
+            line-height: 26px;
+
+            a {
+                color: #666666;
+            }
+
+            a:hover {
+                color: #ff6600;
+            }
+
+        }
+
+        .roof_right {
+            float: right;
+            line-height: 20px;
+            height: 100%;
+
+            span {
+                padding: 0px 5px 0px 5px;
+                color: #e5e5e5;
+            }
+
+            a:hover {
+                color: #fe6809;
+            }
+
+            i {
+                width: 8px;
+                height: 4px;
+                display: inline-block;
+                background: url(../img/tubiao.png) no-repeat;
+                background-position: 0px -27px;
+            }
+
+            .shopping_trolley {
+                background: url(../img/tubiao.png)no-repeat;
+                background-position: 3px -43px;
+                padding-left: 25px;
+                padding-bottom: 5px;
+            }
+
+            .app {
+                background: url(../img/tubiao.png) no-repeat;
+                background-position: 0px -67px;
+                border-left: 1px solid #e9e9e9;
+                padding-left: 20px;
+                margin-right: 20px;
+                position: relative;
+                padding-bottom: 5px;
+
+                .quick_mark {
+                    background: url(../img/tubiao.png)no-repeat;
+                    background-position: 0px -146px;
+                    width: 168px;
+                    height: 203px;
+                    position: absolute;
+                    right: -56px;
+                    top: 20px;
+                    display: none;
+                    z-index: 1;
+                }
+            }
+
+            .pron {
+                position: relative;
+                height: 100%;
+                display: inline-block;
+
+                &.pron:hover {
+                    background: #fff;
+                    border-bottom: 1px solid #e5e5e5;
+                }
+
+                .item {
+                    position: absolute;
+                    right: 0px;
+                    background: #fff;
+                    color: #000;
+                    font-size: 12px;
+                    width: 100%;
+                    top: 27px;
+                    display: none;
+                    z-index: 1;
+
+                    li {
+                        padding-left: 5px;
+
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .help {
+                position: relative;
+                height: 100%;
+                display: inline-block;
+
+                &.help:hover {
+                    background: #fff;
+                    border-bottom: 1px solid #e5e5e5;
+                }
+
+                .item1 {
+                    position: absolute;
+                    right: 0px;
+                    background: #fff;
+                    color: #000;
+                    font-size: 12px;
+                    width: 100%;
+                    top: 27px;
+                    display: none;
+                    z-index: 1;
+
+                    li {
+                        padding-left: 5px;
+
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/shopping.min.css">
+    <link rel="stylesheet" href="../css/top.min.css">
+    <link rel="stylesheet" href="../lib/control.css">
+    <link rel="stylesheet" href="../lib/carts.css">
+    <link rel="stylesheet" href="../lib/reset.css">
+</head>
+
+<body>
+    <div id="top">
+    </div>
+    <div class="header">
+        <div class="header_nr content">
+            <a href="javascript:void(0)"><img src="http://pic.keede.com/UI/humanity/site/kede_logo.gif" alt=""></a>
+            <h2 id="biaoti" style="margin-left: 30px;">我的购物车</h2>
+        </div>
+    </div>
+    <div id="stepBar" class="ui-stepBar-wrap">
+        <div class="ui-stepBar">
+            <div class="ui-stepProcess"></div>
+        </div>
+        <div>
+            <div class="ui-stepInfo-wrap">
+                <table class="ui-stepLayout" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="ui-stepInfo">
+                            <a class="ui-stepSequence">1</a>
+                            <p class="ui-stepName">我的购物车</p>
+                        </td>
+                        <td class="ui-stepInfo">
+                            <a class="ui-stepSequence">2</a>
+                            <p class="ui-stepName">确认订单信息</p>
+                        </td>
+                        <td class="ui-stepInfo">
+                            <a class="ui-stepSequence">3</a>
+                            <p class="ui-stepName">成功提交订单</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <section class="cartMain">
+        <div class="cartMain_hd">
+            <ul class="order_lists cartTop">
+                <li class="list_chk">
+                    <!--所有商品全选-->
+                    <input type="checkbox" id="all" class="whole_check">
+                    <label for="all"></label>
+                    全选
+                </li>
+                <li class="list_con">商品信息</li>
+                <li class="list_info">商品参数</li>
+                <li class="list_price">单价</li>
+                <li class="list_amount">数量</li>
+                <li class="list_sum">金额</li>
+                <li class="list_op">操作</li>
+            </ul>
+        </div>
+
+        <div class="cartBox">
+            <div class="order_content">
+                <ul class="order_lists">
+                    <li class="list_chk">
+                        <input type="checkbox" id="checkbox_2" class="son_check">
+                        <label for="checkbox_2"></label>
+                    </li>
+                    <li class="list_con">
+                        <div class="list_img"><a href="javascript:;"><img
+                                    src="http://pic.keede.com/extend/1e57b0e9-c8f9-4859-9d90-9238bf3b097b-400-400.jpg"
+                                    alt=""></a></div>
+                        <div class="list_text"><a href="javascript:;"></a></div>
+                    </li>
+                    <li class="list_info">
+                        <p>规格：默认</p>
+                        <p id="ysx"></p>
+                    </li>
+                    <li class="list_price">
+                        <p class="price"></p>
+                    </li>
+                    <li class="list_amount">
+                        <div class="amount_box">
+                            <a href="javascript:;" class="reduce reSty">-</a>
+                            <input type="text" value="1" class="sum">
+                            <a href="javascript:;" class="plus">+</a>
+                        </div>
+                    </li>
+                    <li class="list_sum">
+                        <p class="sum_price"></p>
+                    </li>
+                    <li class="list_op">
+                        <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="bar-wrapper">
+            <div class="bar-right">
+                <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+                <div class="calBtn"><a href="javascript:;">结算</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="model_bg"></section>
+    <section class="my_model">
+        <p class="title">删除宝贝<span class="closeModel">X</span></p>
+        <p>您确认要删除该宝贝吗？</p>
+        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;"
+                class="dialog-close">关闭</a></div>
+    </section>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../lib/jquery.easing.1.3.js"></script>
+    <script src="../lib/stepBar.js"></script>
+    <script src="../lib/carts.js"></script>
+    <script src="../js/shopping.js"></script>
+    <script>
+        $('#top').load('top.html');
+        $(function () {
+
+            stepBar.init("stepBar", {
+                step: 1,
+                change: true,
+                animation: true
+            });
+
+        });
+    </script>
+</body>
+
+</html>
